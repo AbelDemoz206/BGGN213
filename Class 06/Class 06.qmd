@@ -1,0 +1,123 @@
+---
+title: "Class 06"
+author: "Abel Demoz"
+format: pdf
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+```{r}
+1 + 1
+```
+
+My first function :-)
+
+```{r}
+add <- function (x, y=1:10) {
+  
+  x+y
+  
+}
+```
+
+```{r}
+add(1,1)
+add(x=1, y=100)
+add(c(100,1,100),1)
+```
+
+```{r}
+add(10)
+add(10,10)
+```
+
+```{r}
+add(1,1)
+```
+
+Write a function to generate DNA that makes a random nucleotide of any seq
+
+Nucleotide Function
+
+```{r}
+## generate_DNA <- function() {
+
+bases <- c("A", "C", "G", "T")
+
+sample(bases, size=5, replace = TRUE)
+
+```
+
+Than is my wee working snipet, now I can make it into a function.
+
+```{r}
+generate_dna <- function(lenght) {
+bases <- c("A", "C", "G", "T")
+sequence <- sample(bases, size=lenght, replace = TRUE)
+
+return(sequence)
+  
+}
+```
+
+```{r}
+generate_dna()
+```
+
+```{r}
+bio3d::aa.table
+```
+
+```{r}
+aa <-unique(bio3d::aa.table$aa1) [1:20]
+```
+
+```{r}
+generate_protein <- function(length) {
+  aa <-unique(bio3d::aa.table$aa1) [1:20]
+  sequence <- sample(aa, size=length, replace = TRUE)
+  return(sequence)
+  
+}
+
+```
+
+```{r}
+generate_protein(5)
+```
+
+Generate randowm protein sequences of length 6 to 12
+
+```{r}
+sapply(6:12, generate_protein)
+```
+
+```{r}
+paste(c("barry", "Claire", "Chandra"), "Loves R", sep="")
+```
+
+```{r}
+generate_protein <- function(length) {
+  aa <-unique(bio3d::aa.table$aa1) [1:20]
+  sequence <- sample(aa, size=length, replace = TRUE)
+  sequence <- paste(sequence, collapse = "")
+  return(sequence)
+  
+}
+```
+
+```{r}
+generate_protein(10)
+```
+
+```{r}
+answer <- sapply(6:12, generate_protein)
+answer
+```
+
+```{r}
+cat(paste(">id.", 6:12, "\n", answer, sep=""), sep ="\n")
+
+```
