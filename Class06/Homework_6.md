@@ -65,7 +65,7 @@ Drug_PI("4AKE")
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpP9jeBu/4AKE.pdb exists.
+    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpQWpH5u/4AKE.pdb exists.
     Skipping download
 
 ![](Homework_6_files/figure-commonmark/unnamed-chunk-3-1.png)
@@ -77,7 +77,7 @@ Drug_PI("1AKE")
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpP9jeBu/1AKE.pdb exists.
+    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpQWpH5u/1AKE.pdb exists.
     Skipping download
 
        PDB has ALT records, taking A only, rm.alt=TRUE
@@ -91,7 +91,7 @@ Drug_PI("1E4Y")
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpP9jeBu/1E4Y.pdb exists.
+    /var/folders/_f/_c48_l_x09b103fx36xst2tr0000gn/T//RtmpQWpH5u/1E4Y.pdb exists.
     Skipping download
 
 ![](Homework_6_files/figure-commonmark/unnamed-chunk-5-1.png)
