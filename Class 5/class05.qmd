@@ -10,7 +10,6 @@ R has lot's of ways to make figures and graphs in particlular. One that come wit
 plot(cars) 
 ```
 
-------------------------------------------------------------------------
 
 A very popular package in this area is callled **ggplot2**
 
@@ -121,8 +120,4 @@ p <-ggplot(mtcars)+
 ggsave("myplot.pdf")
 ```
 
-
-```{r}
-p
-```
 

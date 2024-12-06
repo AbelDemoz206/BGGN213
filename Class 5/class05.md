@@ -10,8 +10,6 @@ plot(cars)
 
 ![](class05_files/figure-commonmark/unnamed-chunk-1-1.png)
 
-------------------------------------------------------------------------
-
 A very popular package in this area is callled **ggplot2**
 
 Before I can use any add-on package like this I must install it with the
@@ -175,9 +173,3 @@ ggsave("myplot.pdf")
 ```
 
     Saving 7 x 5 in image
-
-``` r
-p
-```
-
-![](class05_files/figure-commonmark/unnamed-chunk-15-1.png)
