@@ -1,0 +1,128 @@
+---
+title: "Class 05"
+author: "Abel"
+format: gfm
+---
+
+R has lot's of ways to make figures and graphs in particlular. One that come with R out the box is called **"bas" R** - the 'plot()' function.
+
+```{r}
+plot(cars) 
+```
+
+------------------------------------------------------------------------
+
+A very popular package in this area is callled **ggplot2**
+
+Before I can use any add-on package like this I must install it with the `install.packages("ggplot2")` command/function
+
+Then to use hte package I need to load it with a 'library(ggplot2)' call.
+
+```{r}
+library(ggplot2)
+ggplot(cars) + 
+  aes(x=speed, y=dist) + 
+  geom_point()
+```
+
+For "simple" plots like this one base R code witll be much shorter than ggplot code.
+
+```{r}
+library(ggplot2)
+ggplot(cars) + 
+  aes(x=speed, y=dist) + 
+  geom_point() +
+  geom_smooth()
+```
+
+Every ggplot has at least three layers
+
+\-**data** (data.frame with the number or stuff you want to plot) -**aes**tthetics (mapping of your data colums to your plot) -**geom**s (there are tones of these, basics are `geom_point()`, `geom_line()`, `geom_col()`)
+
+```{r}
+head(mtcars)
+```
+Make a ggplot of the `mtcars` data set using `mpp` vs `disp` and set the size fo the points to the `hp`
+set the color to `am`
+```{r}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(x=mpg, y= disp, size=hp, color= am) + 
+  geom_point() 
+  
+```
+
+
+```{r}
+library(ggrepel)
+
+ggplot(mtcars) + 
+  aes(x=mpg, y= disp, col=am, label=rownames(mtcars)) + 
+  geom_point() +
+  facet_wrap(~am) +
+  geom_text_repel()
+  
+```
+
+
+```{r}
+url <- "https://bioboot.github.io/bimm143_S20/class-material/up_down_expression.txt"
+genes <- read.delim(url)
+head(genes)
+nrow(genes)
+
+```
+There are `r nrow(genes)` genese is this dataaset. 
+```{r}
+unique(genes$State)
+```
+The `table()`function is super useful untility to tell me how many entries of each type there are.
+```{r}
+table(genes$State) / nrow(genes)
+```
+
+The functions `nrow()`, and `table()` are ones I want you to know
+```{r}
+library(ggplot2)
+ggplot(genes) +
+aes(x=Condition1, y=Condition2) +
+geom_point()
+    
+```
+```{r}
+    ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State) +
+    geom_point()
+```
+
+```{r}
+ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State) +
+    geom_point() +
+scale_colour_manual( values=c("blue","gray","red") )
+```
+
+```{r}
+ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State) +
+    geom_point() +
+scale_colour_manual( values=c("blue","gray","red") ) +
+labs(title = "Gene Expression Changes Upton Drug Treatment", x = "Control (no drug)", y= "Drug Treatment")
+```
+
+
+> key points 
+
+```{r}
+p <-ggplot(mtcars)+
+  aes(mpg, disp) +
+  geom_point()
+
+ggsave("myplot.pdf")
+```
+
+
+```{r}
+p
+```
+
